@@ -4,6 +4,10 @@ import Header from "./components/Header";
 import "./App.css";
 import ThemeContext from "./context/theme/ThemeContext";
 
+import Parent from './renderChildren/Parent';
+import FirstChild from './renderChildren/FirstChild';
+import SecondChild from './renderChildren/SecondChild';
+
 const App = () => {
   const [theme, changeTheme] = useState("light");
 
@@ -22,7 +26,13 @@ const App = () => {
           >
             Learn React
           </a>
+					<div>hello I'm a child of Header</div>
         </Header>
+				{/* Render props Parent and Children components */}
+				<Parent>
+					<FirstChild />
+					<SecondChild />
+				</Parent>
       </div>
     </ThemeContext.Provider>
   );
